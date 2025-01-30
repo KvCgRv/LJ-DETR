@@ -1,0 +1,11 @@
+train: /mnt/d/subuntu/steel_thing/neu_yolo_new/train
+val: /mnt/d/subuntu/steel_thing/neu_yolo_new/val
+test: /mnt/d/subuntu/steel_thing/neu_yolo_new/test
+nc: 6
+names:
+  "0": 'crazing'
+  "1": 'inclusion'
+  "2": 'patches'
+  "3": 'pitted_surface'
+  "4": 'rolled-in_scale'
+  "5": 'scratches'

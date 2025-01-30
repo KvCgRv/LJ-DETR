@@ -1,0 +1,16 @@
+训练命令：yolo detect train data=phone.yaml model=yolov10s.yaml epochs=100 batch=8 imgsz=640
+代码中我设置了禁用wandb进行训练跟踪，不然一直跳认证,就是ultralytics/utils/callbacks/wb.py中在try except下面额外写wb = None，让他永久不跳出来就行 
+后台训练格式：nohup yolo detect train data=phone.yaml model=yolov10s.yaml epochs=100 batch=8 imgsz=640 >bdsi.log 2>&1 &
+
+数据配置文件最好用绝对路径
+如果其他的数据集框的类别有变化（比如检测从6类变成10类，就要去ultralytics/cfg/models/v10/yolov10s.yaml 把开头的nc类别改一下
+遇到索引超出异常我还没会解决（gc10上），怀疑是类别应该
+ 
+训练还有一种好方式：更改ultralytics/config/default.yaml中的路径，然后修改就行了
+yolo cfg=ultralytics/cfg/default.yaml
+
+遇到过一个报错是cuda内存很大但是一直报错，我发现是default.yaml中workers默认为8，改成0之后没事了
+yolo detect train data=neu.yaml model=ultralytics/cfg/models/v10/yolov10s.yaml pretrained=yolov10s.pt epochs=200 batch=8 imgsz=640 device=0 project=yolov10
+nohup yolo detect train data=neu.yaml model=ultralytics/cfg/models/v10/yolov10s.yaml pretrained=yolov10s.pt epochs=200 batch=8 imgsz=640 device=0 project=yolov10 > train_logs/yolov10s_neu.log 2>&1 &
+
+王天琦建议的训练方式： nohup yolo cfg=ultralytics/cfg/default.yaml > train_logs/yolov10s_neu.log 2>&1 & 记得新建好train_logs的目录

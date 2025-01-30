@@ -1,0 +1,20 @@
+# YOLO dataset configuration file for GC10 dataset
+
+train: /mnt/d/subuntu/steel_thing/gc10_yolo_new_2/train
+val: /mnt/d/subuntu/steel_thing/gc10_yolo_new_2/val
+test: /mnt/d/subuntu/steel_thing/gc10_yolo_new_2/test
+# 类别数量
+nc: 10  # 类别数量
+
+# 类别名称
+names:
+  0: "punching_hole"      # 1: 裂纹
+  1: "welding_line"       # 2: 杂质
+  2: "crescent_gap"       # 3: 斑块
+  3: "water_spot"         # 4: 麻点面
+  4: "oil_spot"           # 5: 压痕
+  5: "silk_spot"          # 6: 刮伤
+  6: "inclusion"          # 7: 异物压入
+  7: "rolled_pit"         # 8: 压痕
+  8: "crease"             # 9: 严重折痕
+  9: "waist_folding"      # 10: 腰折

@@ -1,0 +1,7 @@
+train: /mnt/d/subuntu/steel_thing/neu2/train
+val: /mnt/d/subuntu/steel_thing/neu2/val
+test: /mnt/d/subuntu/steel_thing/neu2/test
+nc: 2
+names:
+  "0": 'phone'
+  "1": 'nophone'

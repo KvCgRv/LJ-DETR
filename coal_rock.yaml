@@ -1,0 +1,10 @@
+
+train: /mnt/d/subuntu/steel_thing/coalrock/train
+val: /mnt/d/subuntu/steel_thing/coalrock/val
+test: /mnt/d/subuntu/steel_thing/coalrock/test
+
+nc: 2
+
+names: 
+  0: "Coal"
+  1: "Rock"
